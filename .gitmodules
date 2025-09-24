@@ -1,0 +1,4 @@
+[submodule "libft"]
+	path = libft
+	url = https://github.com/herom-s/libft.git
+	branch = improvements
