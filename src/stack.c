@@ -1,0 +1,82 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/24 13:28:37 by hermarti          #+#    #+#             */
+/*   Updated: 2025/09/24 20:04:57 by hermarti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+#include "libft.h"
+#include <stdlib.h>
+
+t_stack	*ft_stack_create(void)
+{
+	t_stack	*res;
+
+	res = ft_calloc(1, sizeof(t_stack));
+	if (!res)
+		return (NULL);
+	return (res);
+}
+
+t_stack	*ft_stack_destroy(t_stack **s)
+{
+	if (!s || !*s)
+		return (NULL);
+	ft_dlstclear(&((*s)->top), free);
+	free(*s);
+	*s = NULL;
+	return (NULL);
+}
+
+t_stack	*ft_stack_add_top(t_stack **s, int *value)
+{
+	t_dlist	*node;
+
+	node = ft_dlstnew(value);
+	if (!node)
+		return (NULL);
+	if ((*s)->top == NULL)
+	{
+		(*s)->top = node;
+		(*s)->bot = node;
+		(*s)->size = 1;
+		return (*s);
+	}
+	node->prev = NULL;
+	node->next = (*s)->top;
+	(*s)->top->prev = node;
+	(*s)->top = node;
+	(*s)->size++;
+	return (*s);
+}
+
+t_stack	*ft_stack_delete_top(t_stack **s)
+{
+	t_dlist	*tmp;
+
+	if (!s || !*s || !(*s)->top)
+		return (NULL);
+	if ((*s)->size <= 0)
+		return (NULL);
+	tmp = (*s)->top;
+	if ((*s)->top == (*s)->bot)
+	{
+		(*s)->top = NULL;
+		(*s)->bot = NULL;
+	}
+	else
+	{
+		(*s)->top = (*s)->top->next;
+		(*s)->top->prev = NULL;
+	}
+	(*s)->size--;
+	tmp->content = NULL;
+	ft_dlstdelone(tmp, free);
+	return (*s);
+}
