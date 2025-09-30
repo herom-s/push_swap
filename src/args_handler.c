@@ -75,6 +75,7 @@ char	**ft_str_args_handler(int argc, char **argv, int *size_str_numbers)
 	if (str_numbers[0] == NULL)
 	{
 		free(str_numbers[0]);
+		free(str_numbers);
 		return (NULL);
 	}
 	*size_str_numbers = ft_str_numbers_size(str_numbers);

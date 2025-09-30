@@ -43,7 +43,7 @@ CFLAGS := -I$(LIBFT_INC) -Wall -Wextra -Werror
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
-	CFLAGS += -g2 -O0 #-fsanitize=leak
+	CFLAGS += -g2 -O0 -fsanitize=leak
 endif
 
 RM = rm -f
