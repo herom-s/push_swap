@@ -98,7 +98,7 @@ char	**ft_args_handler(int argc, char **argv, int *size_str_numbers)
 		ft_strlcpy(str_numbers[i - 1], argv[i], argv_len);
 		i++;
 	}
-	str_numbers[i] = NULL;
+	str_numbers[i - 1] = NULL;
 	*size_str_numbers = ft_str_numbers_size(str_numbers);
 	return (str_numbers);
 }

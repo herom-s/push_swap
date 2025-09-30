@@ -6,7 +6,7 @@
 /*   By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:18:32 by hermarti          #+#    #+#             */
-/*   Updated: 2025/09/30 13:21:07 by hermarti         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:57:31 by hermarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ typedef struct s_stack
 
 typedef struct s_vars
 {
-	t_stack			a;
-	t_stack			b;
+	t_stack			*a;
+	t_stack			*b;
 }				t_vars;
 
 t_stack				*ft_stack_create(void);
@@ -62,6 +62,10 @@ char				**ft_str_args_handler(int argc,
 						char **argv, int *size_str_numbers);
 char				**ft_args_handler(int argc, char **argv,
 						int *size_str_numbers);
+
+
+t_vars				*ft_create_env(int *int_numbers, int int_numbers_size);
+void				ft_destroy_env(t_vars *env);
 
 int					ft_print_error(char *msg);
 #endif
