@@ -77,3 +77,14 @@ int	*ft_str_numbers_to_int(char **str_numbers, int size_str_numbers)
 	}
 	return (int_numbers);
 }
+
+void	*ft_free_str_numbers(char **s, size_t i)
+{
+	while (i > 0)
+	{
+		free(s[--i]);
+	}
+	free(s);
+	s = NULL;
+	return (NULL);
+}

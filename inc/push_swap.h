@@ -55,6 +55,7 @@ int					ft_check_str_numbers(char **str_numbers,
 						int size_str_numbers);
 int					*ft_str_numbers_to_int(char **str_numbers,
 						int size_str_numbers);
+void				*ft_free_str_numbers(char **s, size_t i);
 
 char				**ft_no_args_handler(int *size_str_numbers);
 char				**ft_str_args_handler(int argc,

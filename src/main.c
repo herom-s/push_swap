@@ -13,18 +13,7 @@
 #include "push_swap.h"
 #include <stdlib.h>
 
-static void *ft_free_str_numbers(char **s, size_t i)
-{
-	while (i > 0)
-	{
-		free(s[--i]);
-	}
-	free(s);
-	s = NULL;
-	return (NULL);
-}
-
-static	int *ft_fill_numbers(int argc, char **argv)
+static int	*ft_fill_numbers(int argc, char **argv)
 {
 	char	**str_numbers;
 	int		*int_numbers;
