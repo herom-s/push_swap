@@ -6,7 +6,7 @@
 #    By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 09:35:18 by hermarti          #+#    #+#              #
-#    Updated: 2025/09/30 16:57:49 by hermarti         ###   ########.fr        #
+#    Updated: 2025/10/01 01:15:04 by hermarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS := $(SRC_DIR)main.c \
 		$(SRC_DIR)ps_stack_func3.c \
 		$(SRC_DIR)error.c \
 		$(SRC_DIR)env.c \
+		$(SRC_DIR)sort.c \
 		$(SRC_DIR)args_handler.c \
 		$(SRC_DIR)numbers_handler.c \
 

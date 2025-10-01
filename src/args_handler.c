@@ -42,28 +42,26 @@ char	**ft_no_args_handler(int *size_str_numbers)
 {
 	char	**str_numbers;
 	char	*buffer;
+	char	*buffer_trimmed;
 	int		buffer_size;
 	int		byte_read;
 
 	buffer_size = 100;
 	buffer = ft_calloc(buffer_size, sizeof(char));
 	if (!buffer)
-	{
-		ft_print_error("Error\n");
 		return (NULL);
-	}
 	byte_read = read(0, buffer, buffer_size);
-	if (byte_read > 0)
+	while (byte_read > buffer_size)
 	{
-		while (byte_read > buffer_size)
-		{
-			buffer = ft_buffer_realloc(buffer, &buffer_size);
-			if (!buffer)
-				return (NULL);
-		}
+		buffer = ft_buffer_realloc(buffer, &buffer_size);
+		if (!buffer)
+			return (NULL);
 	}
-	str_numbers = ft_split(buffer, ' ');
+	buffer_trimmed = ft_strtrim(buffer, "\n");
+	str_numbers = ft_split(buffer_trimmed, ' ');
 	*size_str_numbers = ft_str_numbers_size(str_numbers);
+	free(buffer);
+	free(buffer_trimmed);
 	return (str_numbers);
 }
 

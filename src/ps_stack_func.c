@@ -47,26 +47,32 @@ void	ft_stack_ss(t_stack *a, t_stack *b)
 
 void	ft_stack_pa(t_stack *a, t_stack *b)
 {
-	void	*first;
+	int	first;
+	int	*val;
 
-	first = NULL;
-	if (b->size <= 0)
+	if (!b || b->size <= 0)
 		return ;
-	first = b->top->content;
-	ft_stack_pop(&b);
-	ft_stack_push(&a, first);
+	first = ft_stack_pop(&b);
+	val = malloc(sizeof(int));
+	if (!val)
+		return ;
+	*val = first;
+	ft_stack_push(&a, val);
 	ft_printf("pa\n");
 }
 
 void	ft_stack_pb(t_stack *a, t_stack *b)
 {
-	void	*first;
+	int	first;
+	int	*val;
 
-	first = NULL;
-	if (a->size <= 0)
+	if (!a || a->size <= 0)
 		return ;
-	first = a->top->content;
-	ft_stack_pop(&a);
-	ft_stack_push(&b, first);
+	first = ft_stack_pop(&a);
+	val = malloc(sizeof(int));
+	if (!val)
+		return ;
+	*val = first;
+	ft_stack_push(&b, val);
 	ft_printf("pb\n");
 }

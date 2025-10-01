@@ -6,7 +6,7 @@
 /*   By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:18:32 by hermarti          #+#    #+#             */
-/*   Updated: 2025/09/30 16:57:31 by hermarti         ###   ########.fr       */
+/*   Updated: 2025/10/01 01:09:56 by hermarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void				ft_stack_rra(t_stack **a);
 void				ft_stack_rrb(t_stack **b);
 void				ft_stack_rrr(t_stack *a, t_stack *b);
 
+int					ft_sort_numbers(t_vars *env);
+
 int					ft_check_str_numbers(char **str_numbers,
 						int size_str_numbers);
 int					*ft_str_numbers_to_int(char **str_numbers,
@@ -62,7 +64,6 @@ char				**ft_str_args_handler(int argc,
 						char **argv, int *size_str_numbers);
 char				**ft_args_handler(int argc, char **argv,
 						int *size_str_numbers);
-
 
 t_vars				*ft_create_env(int *int_numbers, int int_numbers_size);
 void				ft_destroy_env(t_vars *env);

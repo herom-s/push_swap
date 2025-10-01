@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
 #include <stdlib.h>
 
@@ -43,17 +42,17 @@ static int	*ft_fill_numbers(int argc, char **argv, int *int_numbers_size)
 int	main(int argc, char **argv)
 {
 	int		*int_numbers;
-	int 	int_numbers_size;
+	int		int_numbers_size;
 	t_vars	*env;
 
 	int_numbers_size = 0;
 	int_numbers = ft_fill_numbers(argc, argv, &int_numbers_size);
 	if (!int_numbers)
 		return (ft_print_error("Error\n"));
-	(void)env;
 	env = ft_create_env(int_numbers, int_numbers_size);
 	if (!env)
 		return (ft_print_error("Error\n"));
+	ft_sort_numbers(env);
 	ft_destroy_env(env);
 	return (0);
 }

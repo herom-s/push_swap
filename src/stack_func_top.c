@@ -55,7 +55,6 @@ t_stack	*ft_stack_delete_top(t_stack **s)
 		(*s)->top->prev = NULL;
 	}
 	(*s)->size--;
-	tmp->content = NULL;
 	ft_dlstdelone(tmp, free);
 	return (*s);
 }
