@@ -6,20 +6,26 @@
 #    By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 09:35:18 by hermarti          #+#    #+#              #
-#    Updated: 2025/10/01 01:15:04 by hermarti         ###   ########.fr        #
+#    Updated: 2025/10/01 02:51:09 by hermarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := push_swap
-LIBFT := libft/libft.a
 
+LIBFT := libft/libft.a
 LIBFT_INC := libft/inc/
+
 INC_DIR := inc/
 INC_BONUS_DIR := inc_bonus/
+
 SRC_DIR := src/
 SRC_BONUS_DIR := src_bonus/
+
+OBJ_DIR := obj/
+
 INC := $(INC_DIR)push_swap.h
 INC_BONUS := $(INC_BONUS_DIR)push_swap_bonus.h
+
 SRCS := $(SRC_DIR)main.c \
 		$(SRC_DIR)stack.c \
 		$(SRC_DIR)stack_func.c \
@@ -37,8 +43,8 @@ SRCS := $(SRC_DIR)main.c \
 
 SRCS_BONUS := $(SRCS_BONUS_DIR)main.c
 
-OBJS := $(SRCS:.c=.o)
-OBJS_BONUS := $(SRCS_BONUS:.c=.o)
+OBJS := $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
+OBJS_BONUS := $(patsubst $(SRC_BONUS_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS_BONUS))
 
 CC := cc
 CFLAGS := -I$(LIBFT_INC) -Wall -Wextra -Werror
@@ -57,10 +63,12 @@ all: $(LIBFT) $(NAME)
 $(LIBFT):
 	$(MAKE) -C libft
 
-$(OBJS): %.o: %.c $(INC)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC)
+	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
-$(OBJS_BONUS): %.o: %.c $(INC_BONUS)
+$(OBJ_DIR)%.o: $(SRC_BONUS_DIR)%.c $(INC_BONUS)
+	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -I$(INC_BONUS_DIR) -c $< -o $@
 
 $(NAME): $(LIBFT) $(OBJS)
@@ -75,6 +83,7 @@ bonus: $(LIBFT) .bonus
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
+	$(RM) -r $(OBJ_DIR)
 	$(MAKE) -C libft clean
 
 fclean: clean
