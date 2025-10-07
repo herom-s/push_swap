@@ -21,9 +21,7 @@ static int	*ft_fill_numbers(int argc, char **argv, int *int_numbers_size)
 
 	str_numbers = NULL;
 	size_str_numbers = 0;
-	if (argc == 1)
-		str_numbers = ft_no_args_handler(&size_str_numbers);
-	else if (argc == 2)
+	if (argc == 2)
 		str_numbers = ft_str_args_handler(argc, argv, &size_str_numbers);
 	else if (argc >= 3)
 		str_numbers = ft_args_handler(argc, argv, &size_str_numbers);
@@ -45,6 +43,8 @@ int	main(int argc, char **argv)
 	int		int_numbers_size;
 	t_vars	*env;
 
+	if (argc == 1)
+		return (0);
 	int_numbers_size = 0;
 	int_numbers = ft_fill_numbers(argc, argv, &int_numbers_size);
 	if (!int_numbers)

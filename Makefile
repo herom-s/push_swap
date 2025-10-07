@@ -6,7 +6,7 @@
 #    By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 09:35:18 by hermarti          #+#    #+#              #
-#    Updated: 2025/10/01 02:51:09 by hermarti         ###   ########.fr        #
+#    Updated: 2025/10/01 02:57:15 by hermarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,6 @@ bonus: $(LIBFT) .bonus
 	@touch .bonus
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
 	$(RM) -r $(OBJ_DIR)
 	$(MAKE) -C libft clean
 

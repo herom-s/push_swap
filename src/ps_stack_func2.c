@@ -46,13 +46,6 @@ void	ft_stack_rb(t_stack **b)
 	ft_printf("rb\n");
 }
 
-void	ft_stack_rr(t_stack *a, t_stack *b)
-{
-	ft_stack_ra(&a);
-	ft_stack_rb(&b);
-	ft_printf("rr\n");
-}
-
 void	ft_stack_rra(t_stack **a)
 {
 	t_dlist	*last;

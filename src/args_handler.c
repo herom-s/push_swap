@@ -25,46 +25,6 @@ static int	ft_str_numbers_size(char **str_numbers)
 	return (i);
 }
 
-static char	*ft_buffer_realloc(char	*buffer, int *size)
-{
-	char	*res;
-
-	res = ft_calloc(*size * 2, sizeof(char));
-	if (!res)
-		return (NULL);
-	ft_strlcpy(res, buffer, *size);
-	free(buffer);
-	*size *= 2;
-	return (res);
-}
-
-char	**ft_no_args_handler(int *size_str_numbers)
-{
-	char	**str_numbers;
-	char	*buffer;
-	char	*buffer_trimmed;
-	int		buffer_size;
-	int		byte_read;
-
-	buffer_size = 100;
-	buffer = ft_calloc(buffer_size, sizeof(char));
-	if (!buffer)
-		return (NULL);
-	byte_read = read(0, buffer, buffer_size);
-	while (byte_read > buffer_size)
-	{
-		buffer = ft_buffer_realloc(buffer, &buffer_size);
-		if (!buffer)
-			return (NULL);
-	}
-	buffer_trimmed = ft_strtrim(buffer, "\n");
-	str_numbers = ft_split(buffer_trimmed, ' ');
-	*size_str_numbers = ft_str_numbers_size(str_numbers);
-	free(buffer);
-	free(buffer_trimmed);
-	return (str_numbers);
-}
-
 char	**ft_str_args_handler(int argc, char **argv, int *size_str_numbers)
 {
 	char	**str_numbers;

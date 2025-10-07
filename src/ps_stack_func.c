@@ -38,13 +38,6 @@ void	ft_stack_sb(t_stack *b)
 	ft_printf("sb\n");
 }
 
-void	ft_stack_ss(t_stack *a, t_stack *b)
-{
-	ft_stack_sa(a);
-	ft_stack_sb(b);
-	ft_printf("ss\n");
-}
-
 void	ft_stack_pa(t_stack *a, t_stack *b)
 {
 	int	first;
