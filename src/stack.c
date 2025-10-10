@@ -14,13 +14,14 @@
 #include "libft.h"
 #include <stdlib.h>
 
-t_stack	*ft_stack_create(void)
+t_stack	*ft_stack_create(t_stack_name name)
 {
 	t_stack	*res;
 
 	res = ft_calloc(1, sizeof(t_stack));
 	if (!res)
 		return (NULL);
+	res->name = name;
 	return (res);
 }
 

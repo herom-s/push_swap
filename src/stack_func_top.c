@@ -58,3 +58,12 @@ t_stack	*ft_stack_delete_top(t_stack **s)
 	ft_dlstdelone(tmp, free);
 	return (*s);
 }
+
+int	ft_stack_peek_top_next(t_stack **s)
+{
+	if (!s || !*s || !(*s)->top || (*s)->size <= 1)
+		return (0);
+	if (!(*s)->top->next)
+		return (0);
+	return (*(int *)(*s)->top->next->content);
+}

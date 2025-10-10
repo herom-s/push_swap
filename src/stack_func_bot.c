@@ -58,3 +58,12 @@ t_stack	*ft_stack_delete_bot(t_stack **s)
 	ft_dlstdelone(tmp, free);
 	return (*s);
 }
+
+int	ft_stack_peek_bot_prev(t_stack **s)
+{
+	if (!s || !*s || !(*s)->bot || (*s)->size == 0)
+		return (0);
+	if (!(*s)->bot->prev)
+		return (0);
+	return (*(int *)(*s)->bot->prev->content);
+}

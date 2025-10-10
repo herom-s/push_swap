@@ -22,7 +22,7 @@ t_vars	*ft_create_env(int *int_numbers, int int_numbers_size)
 
 	i = 0;
 	env = ft_calloc(1, sizeof(t_vars));
-	env->a = ft_stack_create();
+	env->a = ft_stack_create(STACK_A);
 	while (i < int_numbers_size)
 	{
 		num = ft_calloc(1, sizeof(int));
@@ -35,7 +35,7 @@ t_vars	*ft_create_env(int *int_numbers, int int_numbers_size)
 		ft_stack_add_bot(&env->a, num);
 		i++;
 	}
-	env->b = ft_stack_create();
+	env->b = ft_stack_create(STACK_B);
 	free(int_numbers);
 	return (env);
 }
