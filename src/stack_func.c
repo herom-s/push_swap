@@ -30,32 +30,9 @@ int	ft_stack_pop(t_stack **s)
 	return (tmp_val);
 }
 
-int	ft_stack_peek_top(t_stack **s)
-{
-	if (!s || !*s || !(*s)->top || (*s)->size == 0)
-		return (0);
-	return (*(int *)(*s)->top->content);
-}
-
-int	ft_stack_peek_bot(t_stack **s)
-{
-	if (!s || !*s || !(*s)->bot || (*s)->size == 0)
-		return (0);
-	return (*(int *)(*s)->bot->content);
-}
-
 int	ft_stack_is_empty(t_stack *s)
 {
 	if (s->size == 0)
 		return (1);
 	return (0);
-}
-
-int	ft_stack_has_next(t_stack *s)
-{
-	if (!s || !s->top || s->size < 2)
-		return (0);
-	if (!s->top->next)
-		return (0);
-	return (1);
 }

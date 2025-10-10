@@ -48,7 +48,6 @@ int					ft_stack_peek_top_next(t_stack **s);
 int					ft_stack_peek_bot(t_stack **s);
 int					ft_stack_peek_bot_prev(t_stack **s);
 int					ft_stack_is_empty(t_stack *s);
-int					ft_stack_has_next(t_stack *s);
 
 void				ft_stack_sa(t_stack *a);
 void				ft_stack_sb(t_stack *b);

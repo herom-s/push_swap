@@ -59,6 +59,13 @@ t_stack	*ft_stack_delete_bot(t_stack **s)
 	return (*s);
 }
 
+int	ft_stack_peek_bot(t_stack **s)
+{
+	if (!s || !*s || !(*s)->bot || (*s)->size == 0)
+		return (0);
+	return (*(int *)(*s)->bot->content);
+}
+
 int	ft_stack_peek_bot_prev(t_stack **s)
 {
 	if (!s || !*s || !(*s)->bot || (*s)->size == 0)

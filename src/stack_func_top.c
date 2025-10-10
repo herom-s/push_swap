@@ -59,6 +59,13 @@ t_stack	*ft_stack_delete_top(t_stack **s)
 	return (*s);
 }
 
+int	ft_stack_peek_top(t_stack **s)
+{
+	if (!s || !*s || !(*s)->top || (*s)->size == 0)
+		return (0);
+	return (*(int *)(*s)->top->content);
+}
+
 int	ft_stack_peek_top_next(t_stack **s)
 {
 	if (!s || !*s || !(*s)->top || (*s)->size <= 1)
