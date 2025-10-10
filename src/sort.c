@@ -299,6 +299,8 @@ int	ft_sort_numbers(t_vars *env)
 		return (ft_sort_two(env, STACK_A));
 	else if (env->a->size == 3)
 		return (ft_sort_three(env, STACK_A));
+	else if (env->a->size == 4)
+		return (ft_sort_four(env));
 	else if (env->a->size == 5)
 		return (ft_sort_five(env));
 	else
