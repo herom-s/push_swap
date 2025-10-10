@@ -168,14 +168,20 @@ void	ft_rotate_min_to_top(t_stack *s)
 			ft_stack_rra(&s);
 }
 
-int	ft_sort_five(t_vars *env)
+int	ft_sort_four(t_vars *env)
 {
-	ft_rotate_min_to_top(env->a);
-	ft_stack_pb(env->a, env->b);
 	ft_rotate_min_to_top(env->a);
 	ft_stack_pb(env->a, env->b);
 	ft_sort_three(env, STACK_A);
 	ft_stack_pa(env->a, env->b);
+	return (1);
+}
+
+int	ft_sort_five(t_vars *env)
+{
+	ft_rotate_min_to_top(env->a);
+	ft_stack_pb(env->a, env->b);
+	ft_sort_four(env);
 	ft_stack_pa(env->a, env->b);
 	return (1);
 }
@@ -250,13 +256,13 @@ static int	*ft_create_sorted_array(t_vars *env, int size)
 
 int	ft_sort_n_radix(t_vars *env)
 {
-	int		max_bits;
-	int		i;
-	int		j;
-	int		size;
-	int		*sorted;
-	int		current_val;
-	int		index;
+	int	max_bits;
+	int	i;
+	int	j;
+	int	size;
+	int	*sorted;
+	int	current_val;
+	int	index;
 
 	size = env->a->size;
 	sorted = ft_create_sorted_array(env, size);
@@ -296,9 +302,6 @@ int	ft_sort_numbers(t_vars *env)
 	else if (env->a->size == 5)
 		return (ft_sort_five(env));
 	else
-	{
-		ft_sort_n_radix(env);
-		return (1);
-	}
+		return (ft_sort_n_radix(env));
 	return (1);
 }
