@@ -6,7 +6,7 @@
 /*   By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:18:32 by hermarti          #+#    #+#             */
-/*   Updated: 2025/10/01 01:09:56 by hermarti         ###   ########.fr       */
+/*   Updated: 2025/10/11 15:10:25 by hermarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ int					ft_stack_peek_top(t_stack **s);
 int					ft_stack_peek_top_next(t_stack **s);
 int					ft_stack_peek_bot(t_stack **s);
 int					ft_stack_peek_bot_prev(t_stack **s);
+
+int					ft_stack_is_sorted(t_stack *s);
+int					ft_stack_get_max(t_stack *s);
+int					ft_stack_get_min(t_stack *s);
+int					ft_stack_get_val_pos(t_stack *s, int val);
 int					ft_stack_is_empty(t_stack *s);
 
 void				ft_stack_sa(t_stack *a);
@@ -61,7 +66,17 @@ void				ft_stack_rra(t_stack **a);
 void				ft_stack_rrb(t_stack **b);
 void				ft_stack_rrr(t_stack **a, t_stack **b);
 
+int					ft_sort_two(t_vars *env, t_stack_name name);
+int					ft_sort_three(t_vars *env, t_stack_name name);
+int					ft_sort_four(t_vars *env);
+int					ft_sort_five(t_vars *env);
 int					ft_sort_numbers(t_vars *env);
+
+void				ft_rotate_value_to_top(t_stack *stack, t_stack_name name,
+						int target);
+void				ft_push_chunks_to_b(t_vars *env);
+void				ft_push_back_to_a(t_vars *env);
+void				ft_process_chunk(t_vars *env, int chunk_min, int chunk_max);
 
 int					ft_check_str_numbers(char **str_numbers,
 						int size_str_numbers);

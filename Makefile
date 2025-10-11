@@ -6,7 +6,7 @@
 #    By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 09:35:18 by hermarti          #+#    #+#              #
-#    Updated: 2025/10/01 02:57:15 by hermarti         ###   ########.fr        #
+#    Updated: 2025/10/11 15:05:04 by hermarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,8 @@ INC_BONUS := $(INC_BONUS_DIR)push_swap_bonus.h
 SRCS := $(SRC_DIR)main.c \
 		$(SRC_DIR)stack.c \
 		$(SRC_DIR)stack_func.c \
+		$(SRC_DIR)stack_func_utils.c \
+		$(SRC_DIR)stack_func_utils2.c \
 		$(SRC_DIR)stack_func_bot.c \
 		$(SRC_DIR)stack_func_top.c \
 		$(SRC_DIR)ps_stack_func.c \
@@ -37,9 +39,11 @@ SRCS := $(SRC_DIR)main.c \
 		$(SRC_DIR)error.c \
 		$(SRC_DIR)env.c \
 		$(SRC_DIR)sort.c \
+		$(SRC_DIR)sort_large.c \
+		$(SRC_DIR)sort_large2.c \
+		$(SRC_DIR)sort_small.c \
 		$(SRC_DIR)args_handler.c \
 		$(SRC_DIR)numbers_handler.c \
-
 
 SRCS_BONUS := $(SRCS_BONUS_DIR)main.c
 
