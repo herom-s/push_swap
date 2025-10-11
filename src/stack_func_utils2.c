@@ -12,21 +12,21 @@
 
 #include "push_swap.h"
 
-static void	ft_rotate_direction(t_stack **stack, t_stack_name name, int rev)
+static void	ft_rotate_direction(t_stack *stack, t_stack_name name, int rev)
 {
 	if (rev)
 	{
 		if (name == STACK_A)
-			ft_stack_rra(stack);
+			ft_stack_rra(&stack);
 		else
-			ft_stack_rrb(stack);
+			ft_stack_rrb(&stack);
 	}
 	else
 	{
 		if (name == STACK_A)
-			ft_stack_ra(stack);
+			ft_stack_ra(&stack);
 		else
-			ft_stack_rb(stack);
+			ft_stack_rb(&stack);
 	}
 }
 
@@ -40,5 +40,5 @@ void	ft_rotate_value_to_top(t_stack *stack, t_stack_name name, int target)
 	pos = ft_stack_get_val_pos(stack, target);
 	reverse = (pos > stack->size / 2);
 	while (*(int *)stack->top->content != target)
-		ft_rotate_direction(&stack, name, reverse);
+		ft_rotate_direction(stack, name, reverse);
 }

@@ -6,7 +6,7 @@
 /*   By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 20:40:48 by hermarti          #+#    #+#             */
-/*   Updated: 2025/10/11 14:55:23 by hermarti         ###   ########.fr       */
+/*   Updated: 2025/10/11 16:21:37 by hermarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	ft_stack_get_val_pos(t_stack *s, int val)
 	if (!s || !s->top)
 		return (0);
 	head = s->top;
-	pos = -1;
+	pos = 0;
 	while (head)
 	{
 		if (*(int *)head->content == val)
@@ -91,5 +91,5 @@ int	ft_stack_get_val_pos(t_stack *s, int val)
 		pos++;
 		head = head->next;
 	}
-	return (pos);
+	return (-1);
 }
