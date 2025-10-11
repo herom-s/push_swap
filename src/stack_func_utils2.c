@@ -6,7 +6,7 @@
 /*   By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 14:48:37 by hermarti          #+#    #+#             */
-/*   Updated: 2025/10/11 14:48:52 by hermarti         ###   ########.fr       */
+/*   Updated: 2025/10/11 17:47:10 by hermarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,21 @@ void	ft_rotate_value_to_top(t_stack *stack, t_stack_name name, int target)
 	reverse = (pos > stack->size / 2);
 	while (*(int *)stack->top->content != target)
 		ft_rotate_direction(stack, name, reverse);
+}
+
+int	ft_get_value_at_pos(t_stack *stack, int pos)
+{
+	t_dlist	*current;
+	int		i;
+
+	current = stack->top;
+	i = 0;
+	while (i < pos && current)
+	{
+		current = current->next;
+		i++;
+	}
+	if (current)
+		return (*(int *)current->content);
+	return (0);
 }

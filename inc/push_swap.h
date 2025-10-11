@@ -6,7 +6,7 @@
 /*   By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:18:32 by hermarti          #+#    #+#             */
-/*   Updated: 2025/10/11 15:10:25 by hermarti         ###   ########.fr       */
+/*   Updated: 2025/10/11 17:54:23 by hermarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,10 @@ int					ft_sort_numbers(t_vars *env);
 
 void				ft_rotate_value_to_top(t_stack *stack, t_stack_name name,
 						int target);
+int					ft_get_value_at_pos(t_stack *stack, int pos);
+int					ft_find_target_pos_in_a(t_stack *a, int b_val);
+void				ft_execute_cheapest_move(t_vars *env, int b_pos);
+int					ft_find_cheapest_pos(t_vars *env);
 void				ft_push_chunks_to_b(t_vars *env);
 void				ft_push_back_to_a(t_vars *env);
 void				ft_process_chunk(t_vars *env, int chunk_min, int chunk_max);

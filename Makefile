@@ -6,7 +6,7 @@
 #    By: hermarti <hermarti@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/21 09:35:18 by hermarti          #+#    #+#              #
-#    Updated: 2025/10/11 15:05:04 by hermarti         ###   ########.fr        #
+#    Updated: 2025/10/11 17:55:14 by hermarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,8 @@ SRCS := $(SRC_DIR)main.c \
 		$(SRC_DIR)sort.c \
 		$(SRC_DIR)sort_large.c \
 		$(SRC_DIR)sort_large2.c \
+		$(SRC_DIR)sort_large_cheap.c \
+		$(SRC_DIR)sort_large_cheap2.c \
 		$(SRC_DIR)sort_small.c \
 		$(SRC_DIR)args_handler.c \
 		$(SRC_DIR)numbers_handler.c \
